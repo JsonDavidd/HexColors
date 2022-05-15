@@ -3,11 +3,12 @@ body {
 	margin: 0
 }
 
-ul{
+ul {
 	list-style: none;
 }
 
-a, p {
+a,
+p {
 	margin: 0.2rem 0;
 	text-decoration: none;
 	color: #eeeeee
@@ -48,6 +49,11 @@ a, p {
 	transition: 100ms;
 	color: #bbbbdb;
 	border-color: #bbbbdb
+}
+
+#input {
+	background-color: transparent;
+	border: none;
 }
 
 #color {
