@@ -19,7 +19,9 @@ const changeColor = (hex = getRandomHex(6)) => {
 }
 
 window.onload = () => changeColor()
-
+HTMLInputElement.prototype.val
 button.addEventListener('click', () => {
-	changeColor(input.value || undefined)
+	if (input.checkValidity()) {
+		changeColor(input.value || undefined)
+	}
 })
