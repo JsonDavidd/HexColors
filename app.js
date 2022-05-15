@@ -4,26 +4,18 @@ const button = document.getElementById('button')
 const currentColor = document.getElementById('currentColor')
 const color = document.getElementById('color')
 
-const randomIntRange = range => 
-	Math.floor(Math.random() * range)
+const randomInt = (i) => Math.floor(Math.random() * i)
 
-const intToHex = int => {
-	return int.toString(16)
-}
+const getRandomHex = (len, random = randomInt) =>
+	Array.from({length: len}, () => random(16).toString(16)).join('')
 
-const applyStyleSheet = (target, style) => {
-	for(i in style){
-		target.style[i] = style[i]
-	}
-}
-
-const colorChanger = () => {
-	const hexColor = '#' + intToHex(randomIntRange(16777215))
+const changeColor = () => {
+	const hexColor = '#' + getRandomHex(6)
 	currentColor.textContent = hexColor
 	color.style.backgroundColor = hexColor
 }
 
-colorChanger()
+window.onload = changeColor
 
 button.addEventListener('click', () => 
-	colorChanger())
+	changeColor())
